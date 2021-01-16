@@ -1,0 +1,247 @@
+17
+5 0111110111110111110111110
+5 0110010000100110010000100
+7 0110111101000111011110010100101101010101011110010
+6 010001101000010100001010000101100010
+4 0111101011001000
+6 011111101010110101101011110101101110
+7 0111111101111111011111110111111101111111011111110
+6 010010101100010000010000100001000010
+7 0110111101111111011110110111111101111111011111110
+3 011101110
+2 0110
+4 0111101011001000
+4 0111101111011110
+4 0101101001011010
+2 0110
+6 010001101000010100001010000101100010
+3 011101110
+
+
+
+1
+5 01111 10111 11011 11101 11110
+
+4
+5 01001 10100 01010 00101 10010
+9 010000001101000000010100000001010000000101000000010100000001010000000101100000010
+9 011101100100111010100110000111000100011000010110000011100100000010011000000001000
+6 010001101000010100001010000101100010
+
+
+
+Wyjście
+5 True
+5 False
+7 False
+6 False
+4 False
+6 False
+7 True
+6 False
+7 False
+3 True
+2 True
+4 False
+4 True
+4 False
+2 True
+6 False
+3 True
+
+
+            cout << i << " |  Czy jest cyklem: " << czyCykl << "  Czy jest Pelny: " << czyPelny << endl;
+
+// Grafy.cpp : Ten plik zawiera funkcję „main”. W nim rozpoczyna się i kończy wykonywanie programu.
+//
+
+#include <iostream>
+
+using namespace std;
+
+
+int main()
+{
+    //Data Holder
+    int graphSize = NULL;
+    char dataArray[50][50];
+   
+
+    //For input
+    int numberOfInputs = NULL;
+
+    //For output
+    int graphGrade = NULL;
+    int maxCounter = 0;
+    int chromaticNumber = 0;
+
+    cin >> numberOfInputs;
+
+    for (int programCyclces = 0; programCyclces < numberOfInputs; programCyclces++) {
+        int colourArray[50] = {0};
+        cin >> graphSize;
+        graphGrade = 0;
+        chromaticNumber = 0;
+
+        for (int a = 0; a < graphSize; a++) {
+            for (int b = 0; b < graphSize; b++) {
+                cin >> dataArray[a][b];
+                if (dataArray[a][b] == '1') {
+                    maxCounter++;
+                    if (a <= b) {
+                        if (colourArray[a] == colourArray[b]) {
+                            colourArray[b]++;
+                        }
+                    }
+                }
+            }
+            if (maxCounter > graphGrade) {
+                graphGrade = maxCounter;
+            }
+            if (colourArray[a]+1 > chromaticNumber) {
+                chromaticNumber = colourArray[a]+1;
+            }
+            maxCounter = 0;
+        }
+        if (chromaticNumber > graphGrade) {
+            cout << "True\n\n";
+        }
+        else {
+            cout << "False\n\n";
+        }
+    }
+}
+
+
+////////////////////
+
+
+// Grafy.cpp : Ten plik zawiera funkcję „main”. W nim rozpoczyna się i kończy wykonywanie programu.
+//
+
+#include <iostream>
+
+using namespace std;
+
+//int czyCykl(char tablica[], int wielkosc) {
+//    for (int i = 0; i < (wielkosc * wielkosc); i++) {
+//
+//    }
+//    return 1;
+//    return 0;
+//}
+//
+//int czyPelny(char tablica[], int wielkosc) {
+//    return 1;
+//    return 0;
+//}
+
+
+int main()
+{
+    //Data Holder
+    int graphSize = 0;
+    char dataArray2[4000];
+   
+    //For input
+    int numberOfInputs;
+
+    //For output
+    int graphGrade = 0;
+    int maxCounter;
+    int chromaticNumber = 0;
+
+    bool czyCykl;
+
+    ios_base::sync_with_stdio(false);
+
+    cin >> numberOfInputs;
+
+    for (int programCyclces = 0; programCyclces < numberOfInputs; programCyclces++) {
+        int colourArray[15] = {0};
+        cin >> graphSize;
+        graphGrade = 0;
+        chromaticNumber = 0;
+
+        for (int i = 0; i < (graphSize*graphSize); i++) {
+            if (i % graphSize == 0) {
+                maxCounter = 0;
+            }
+            cin >> dataArray2[i]; 
+            if (dataArray2[i] == '1') {
+                maxCounter++;
+                if (colourArray[i / graphSize] == colourArray[i % graphSize]) {
+                    colourArray[i % graphSize]++;
+                }
+            }
+            if (i % graphSize == graphSize-1 && maxCounter > graphGrade) {
+                    graphGrade = maxCounter;
+            }
+            if (i % graphSize == graphSize - 1 && colourArray[i/graphSize]+1 > chromaticNumber) {
+                chromaticNumber = colourArray[i/graphSize]+1;
+            }
+        }
+        if (chromaticNumber > graphGrade) {
+            cout << "True\n";
+        }
+        else {
+            cout << "False\n";
+        }
+        //cout << "GraphSize: " << graphSize << " |  GraphGrade : " << graphGrade << " |  ChromaticNumber: " << chromaticNumber << "\n\n\n";
+    }
+}
+
+
+        //for (int a = 0; a < graphSize; a++) {
+        //    for (int b = 0; b < graphSize; b++) {
+        //        if (dataArray[a][b] == '1') {
+        //            maxCounter++;
+        //        }
+        //    }
+        //    if (maxCounter > graphGrade) {
+        //        graphGrade = maxCounter;
+        //    }
+        //    maxCounter = 0;
+        //}
+        //for (int a = 0; a < graphSize; a++) {
+        //    for (int b = a; b < graphSize; b++) {
+        //        if (dataArray[a][b] == '1') {
+        //            if (colourArray[a] == colourArray[b]) {
+        //                colourArray[b]++;
+        //            }
+        //        }
+        //    }
+        //}
+        //for (int i = 0; i < graphSize; i++) {
+        //    if (colourArray[i] > chromaticNumber) {
+        //        chromaticNumber = colourArray[i];
+        //    }
+        //}
+
+        //if (chromaticNumber > graphGrade) {
+        //    cout << "True\n\n";
+        //}
+        //else {
+        //    cout << "False\n\n";
+        //}
+
+        // cout << endl;
+        /*for (int i = 0; i < graphSize; i++) {
+            for (int j = 0; j < graphSize; j++) {
+                cout << " " << dataArray[i][j];
+            }
+            cout << endl;
+        }*/
+        //cout << "ChromaticNumber: " << chromaticNumber << endl;
+        //cout << "Graph grade: " << graphGrade << endl;
+
+// Uruchomienie programu: Ctrl + F5 lub menu Debugowanie > Uruchom bez debugowania
+// Debugowanie programu: F5 lub menu Debugowanie > Rozpocznij debugowanie
+
+// Porady dotyczące rozpoczynania pracy:
+//   1. Użyj okna Eksploratora rozwiązań, aby dodać pliki i zarządzać nimi
+//   2. Użyj okna programu Team Explorer, aby nawiązać połączenie z kontrolą źródła
+//   3. Użyj okna Dane wyjściowe, aby sprawdzić dane wyjściowe kompilacji i inne komunikaty
+//   4. Użyj okna Lista błędów, aby zobaczyć błędy
+//   5. Wybierz pozycję Projekt > Dodaj nowy element, aby utworzyć nowe pliki kodu, lub wybierz pozycję Projekt > Dodaj istniejący element, aby dodać istniejące pliku kodu do projektu
+//   6. Aby w przyszłości ponownie otworzyć ten projekt, przejdź do pozycji Plik > Otwórz > Projekt i wybierz plik sln

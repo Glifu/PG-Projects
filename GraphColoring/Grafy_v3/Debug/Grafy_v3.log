@@ -1,0 +1,6 @@
+﻿  Grafy_v3.cpp
+F:\Studentowe\Sem letni (2 l 4) 2020\AiSD\Projekty\Grafy\Grafy_v3\Grafy_v3.cpp(39,21): warning C4473: „scanf_s”: przekazano niewystarczającą liczbę argumentów dla ciągu formatowania
+F:\Studentowe\Sem letni (2 l 4) 2020\AiSD\Projekty\Grafy\Grafy_v3\Grafy_v3.cpp(39,21): message : symbole zastępcze i ich parametry oczekują 2 argumentów ze zmienną liczbą argumentów, ale podano następującą liczbę zmiennych argumentów: 1
+F:\Studentowe\Sem letni (2 l 4) 2020\AiSD\Projekty\Grafy\Grafy_v3\Grafy_v3.cpp(39,21): message : brakujący argument 2 o zmiennej liczbie parametrów jest wymagany w ciągu formatu „%c”
+F:\Studentowe\Sem letni (2 l 4) 2020\AiSD\Projekty\Grafy\Grafy_v3\Grafy_v3.cpp(39,21): message : ten argument jest używany jako rozmiar bufora
+  Grafy_v3.vcxproj -> F:\Studentowe\Sem letni (2 l 4) 2020\AiSD\Projekty\Grafy\Debug\Grafy_v3.exe

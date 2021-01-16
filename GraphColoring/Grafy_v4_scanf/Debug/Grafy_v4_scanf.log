@@ -1,0 +1,4 @@
+﻿  Grafy_v4_scanf.cpp
+F:\Studentowe\Sem letni (2 l 4) 2020\AiSD\Projekty\Grafy\Grafy_v4_scanf\Grafy_v4_scanf.cpp(5,1): warning C4005: "_CRT_SECURE_NO_WARNINGS": ponowna definicja makra
+F:\Studentowe\Sem letni (2 l 4) 2020\AiSD\Projekty\Grafy\Grafy_v4_scanf\Grafy_v4_scanf.cpp : message : zobacz poprzednią definicję „_CRT_SECURE_NO_WARNINGS”
+  Grafy_v4_scanf.vcxproj -> F:\Studentowe\Sem letni (2 l 4) 2020\AiSD\Projekty\Grafy\Debug\Grafy_v4_scanf.exe

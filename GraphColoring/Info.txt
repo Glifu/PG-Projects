@@ -1,0 +1,52 @@
+Pokolorowanie wierzchołków grafu nazywamy legalnym, jeśli dwa jego połączone wierzchołki mają różny kolor.
+Najmniejsza liczba kolorów (mogą być wszystkie odcienie różowego) potrzebnych do (legalnego) pokolorowania grafu to liczba chromatyczna tego grafu.
+Stopień wierzchołka jest to liczba wychodzących z niego krawędzi.
+
+Sprawdź czy liczba chromatyczna grafu jest większa niż jego największy stopień.
+
+Wejście
+W pierwszej linii liczba kolejnych linii. W następnych liniach. Liczba wierzchołków grafu, a następnie po spacji macierz sąsiedztwa grafu G (wypisana od lewej do prawej z góry na dół bez spacji).
+Wyjście
+True, jeśli liczba chromatyczna grafu jest większa niż jego największy stopień. False, w przeciwnym przypadku.
+Przykład
+
+Wejście
+17
+5 0111110111110111110111110
+5 0110010000100110010000100
+7 0110111101000111011110010100101101010101011110010
+6 010001101000010100001010000101100010
+4 0111101011001000
+6 011111101010110101101011110101101110
+7 0111111101111111011111110111111101111111011111110
+6 010010101100010000010000100001000010
+7 0110111101111111011110110111111101111111011111110
+3 011101110
+2 0110
+4 0111101011001000
+4 0111101111011110
+4 0101101001011010
+2 0110
+6 010001101000010100001010000101100010
+3 011101110
+
+Wyjście
+True
+False
+False
+False
+False
+False
+True
+False
+False
+True
+True
+False
+True
+False
+True
+False
+True
+
+
